@@ -17,5 +17,12 @@
 }
 
 h1[id] {
+    margin-top: 1em;
     margin-bottom: 0.5em;
+}
+
+h1#site-title {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    color: $medium-gray;
 }

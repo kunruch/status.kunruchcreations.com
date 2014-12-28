@@ -21,7 +21,7 @@
   position: relative;
 
   @include media($large-screen) {
-    @include span-columns(4);
+    @include span-columns(6);
     @include omega(3n);
   }
 
@@ -70,6 +70,10 @@
     border-radius: $base-border-radius $base-border-radius 0 0;
     font-weight: bold;
     padding: $base-spacing/3 $gutter/2;
+
+    h2 {
+      font-size: 1.4em;
+    }
   }
 
   .card-copy {

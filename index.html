@@ -8,16 +8,17 @@ layout: default
   <script id="status-cards-template" type="text/x-handlebars-template">
     <div class="card">
       <div class="card-header">
-        {{ friendlyname }}
+        <h2><a href="{{ this.url }}" target="_blank">{{ friendlyname }}</a></h2>
       </div>
       <div class="card-copy">
-        <p>URL: <a href="{{ this.url }}" target="_blank">{{ this.url }}</a></p>
+        <p>Status: {{ this.status }}</p>
       </div>
       <div class="card-stats">
+        <strong>Uptime</strong>
         <ul>
-          <li>{{ this.status }}<span>Status</span></li>
-          <li>{{ this.alltimeuptimeratio }}%<span>Uptime (week)</span></li>
-          <li>{{ this.customuptimeratio }}%<span>Uptime (month)</span></li>
+          <li>{{ this.alltimeuptimeratio }}%<span>Day</span></li>
+          <li>{{ this.customuptimeratio }}%<span>Week</span></li>
+          <li>{{ this.customuptimeratio }}%<span>Month</span></li>
         </ul>
       </div>
     </div>
@@ -29,4 +30,5 @@ layout: default
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+<script src="{{ site.baseurl }}/scripts/charts.js"></script>
 <script src="{{ site.baseurl }}/scripts/uptime.js"></script>
