@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     //credit: http://creatiface.github.io/personal-portfolio/
     (function () {
-        var uptimeRobotAPI = 'http://api.uptimerobot.com/getMonitors?apiKey=' + apiKey + '&responseTimes=1&responseTimesAverage=180&customUptimeRatio=7&format=json&noJsonCallback=1';
+        var uptimeRobotAPI = 'http://api.uptimerobot.com/getMonitors?apiKey=' + apiKey + '&responseTimes=1&responseTimesAverage=120&customUptimeRatio=7&format=json&noJsonCallback=1';
          console.log(uptimeRobotAPI);
         function setSiteStatusTemplate() {
             var projectData = JSON.parse(sessionStorage.getItem('siteStatus')),
@@ -38,7 +38,7 @@ $(document).ready(function () {
 
     function getStatusFromCode(code) {
         if(code == 0) return "paused";
-        if(code == 1) return "N/A";
+        if(code == 1) return "not available";
         if(code == 2) return "up";
         if(code == 8) return "seems down";
         if(code == 9) return "down";
@@ -50,12 +50,12 @@ $(document).ready(function () {
           datasets : [
             {
               label: "My First dataset",
-              fillColor : "rgba(220,220,220,0.2)",
-              strokeColor : "rgba(220,220,220,1)",
-              pointColor : "rgba(220,220,220,1)",
+              fillColor : "rgba(237,194,64,0.2)",
+              strokeColor : "rgba(237,194,64,1)",
+              pointColor : "rgba(237,194,64,1)",
               pointStrokeColor : "#fff",
               pointHighlightFill : "#fff",
-              pointHighlightStroke : "rgba(220,220,220,1)",
+              pointHighlightStroke : "rgba(237,194,64,1)",
               data : []
             }
           ]
@@ -71,7 +71,8 @@ $(document).ready(function () {
 
         var ctx = document.getElementById("canvas").getContext("2d");
         new Chart(ctx).Line(lineChartData, {
-          responsive: true
+          responsive: true,
+          tooltipTemplate: "<%= value %> milliseconds",
         });
     }
 });

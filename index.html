@@ -8,14 +8,20 @@ layout: default
     <div class="card">
       <div class="card-header">
         <h2><a href="{{ this.url }}" target="_blank">{{ friendlyname }}</a></h2>
+        <span><a href="{{ this.url }}" target="_blank">{{ this.url }}</a><span>
       </div>
       <div class="card-copy">
-        <p>Status: {{ this.status }}</p>
-        <strong>Response Time</strong>
-        <canvas id="canvas" width="300" height="120"></canvas>
+         <p><strong>Current Status</strong></p>
+         <div class="{{ this.status }}">
+          <div class="doughnut"></div><div class="card-status">{{ this.status }}</div>
+         </div>
+      </div>
+      <div class="card-copy">
+        <p><strong>Response Time</strong></p>
+        <canvas id="canvas" width="300" height="60"></canvas>
       </div>
       <div class="card-stats">
-        <strong>Uptime</strong>
+        <p><strong>Uptime</strong></p>
         <ul>
           <li>{{ this.alltimeuptimeratio }}%<span>Day</span></li>
           <li>{{ this.customuptimeratio }}%<span>Week</span></li>

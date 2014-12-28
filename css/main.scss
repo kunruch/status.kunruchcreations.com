@@ -3,7 +3,6 @@
 ---
 @charset "utf-8";
 
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "bourbon/bourbon",
@@ -16,6 +15,10 @@
      @include outer-container;
 }
 
+#content {
+    min-height: 320px;
+}
+
 h1[id] {
     margin-top: 1em;
     margin-bottom: 0.5em;
@@ -24,5 +27,20 @@ h1[id] {
 h1#site-title {
     font-size: 1.2em;
     margin-bottom: 1em;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+
+    span {
+        color: darken($light-green, 30);
+        font-weight: 400;
+    }
+}
+
+footer {
+    font-size: 0.9em;
+    text-align: center;
     color: $medium-gray;
+    border-top: 1px solid $light-gray;
+    padding: $base-spacing;
+    margin-top: $base-spacing;
 }

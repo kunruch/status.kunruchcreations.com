@@ -5,12 +5,13 @@
 .card {
   $card-border-color: $base-border-color;
   $card-border: 1px solid $card-border-color;
-  $card-background: lighten($card-border-color, 10);
+  $card-background: lighten($card-border-color, 20);
   $card-header-background: $card-background;
   $card-hover-background: lighten($card-background, 5);
   $card-image-background: #DBD199;
   $card-image-hover-background: lighten($card-image-background, 5);
-  $card-stats-color: lighten($base-accent-color, 10);
+  $card-stats-color: darken($light-green, 20);
+  $card-error-color: darken($light-red, 20);
 
   @include transition (all 0.2s ease-in-out);
   background-color: $card-background;
@@ -74,12 +75,46 @@
     h2 {
       font-size: 1.4em;
     }
+
+    span a {
+      font-weight: 300;
+      color: $medium-gray;
+      font-size: 0.9em;
+    }
   }
 
   .card-copy {
     padding: $base-spacing/2 $gutter/2;
-    font-size: .9em;
+    font-size: 1em;
     line-height: 1.5em;
+    @extend %clearfix;
+
+    .doughnut {
+      float: left;
+      border: 0.8em solid $card-error-color;
+      border-radius: 2em;
+      height: 2em;
+      width: 2em;
+      margin-right: $base-spacing/2;
+    }
+
+    .card-status {
+      text-transform: capitalize;
+      font-size: 2em;
+      line-height: 1;
+      font-weight: 700;
+      color: $card-error-color;
+    }
+
+    .up {
+      .doughnut {
+        border-color: $card-stats-color;
+      }
+
+      .card-status {
+        color: $card-stats-color;
+      }
+    }
 
     canvas {
       padding-right: $base-spacing;
