@@ -12,3 +12,18 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+
+# Set the Sass partials directory, as we're using @imports
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# Exclude these files from production _site
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - README.md
+    - LICENSE
+    - _config_dev.yml
+    - run.bat
+    - run-complete.bat
