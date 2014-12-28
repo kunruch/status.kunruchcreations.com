@@ -1,7 +1,7 @@
 # Site settings
 title: KunRuch
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "http://status.kunruchcreations.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 

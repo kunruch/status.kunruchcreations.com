@@ -22,7 +22,7 @@
   position: relative;
 
   @include media($large-screen) {
-    @include span-columns(6);
+    @include span-columns(4);
     @include omega(3n);
   }
 

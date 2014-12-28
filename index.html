@@ -19,7 +19,7 @@ title: Status of KunRuch Creations Websites
       </div>
       <div class="card-copy">
         <p><strong>Response Time</strong></p>
-        <canvas id="canvas" width="500" height="160"></canvas>
+        <canvas id="canvas{{ this.index }}" width="500" height="160"></canvas>
       </div>
       <div class="card-stats">
         <p><strong>Uptime</strong></p>
@@ -42,49 +42,75 @@ title: Status of KunRuch Creations Websites
 <script src="{{ site.baseurl }}/scripts/charts.js"></script>
 
 <script>
+//read only api keys
+var apiKeys = [
+                'm776535140-532aa29ae18195b1e80bc99e', //KunRuch Creations
+                'm776535123-2492b15387efb6d456dec9bd', //Super Dev Resources
+                'm776549254-3bb388dcbeed46ed625a8f9e', //Super Blogging Resources
+                'm776535138-ba6e3462f4b14be50319c129', //Games.KunRuch
+                'm776551244-4672e6d32323e3275a8823d6', //App.KunRuch
+                'm776551255-0eaeabed89af85a19bf91ce3', //MyTextTwister Webapp
+                'm776536132-50d52b19b64f30b4be0f8e35', //Monika's Site
+                'm776536134-9a92f84ee596fd0993ae1f32', //Kanishk's Site
+                'm776535118-42e81e639c9143711f976df4', //Coding Tips
+              ];
+
 $(document).ready(function () {
 
-    var apiKey = 'm776535140-532aa29ae18195b1e80bc99e'; //read only api key
-    //sessionStorage.clear();
+    //sessionStorage.clear(); //for testing locally
 
-    //credit: http://creatiface.github.io/personal-portfolio/
+    //keep a compiled handlebar template
+    var getTemplate = $('#status-cards-template').html();
+    var template = Handlebars.compile(getTemplate);
+
     (function () {
-        var uptimeRobotAPI = 'http://api.uptimerobot.com/getMonitors?apiKey=' + apiKey + '&responseTimes=1&responseTimesAverage=120&customUptimeRatio=1-7-30&format=json&noJsonCallback=1';
-         console.log(uptimeRobotAPI);
-        function setSiteStatusTemplate() {
-            var projectData = JSON.parse(sessionStorage.getItem('siteStatus')),
-                getTemplate = $('#status-cards-template').html(),
-                template = Handlebars.compile(getTemplate),
-                result = template(projectData);
-            console.log(projectData);
-            $('#status-cards').html(result);
-            drawChart(projectData);
-        };
 
-        if (sessionStorage.getItem('siteStatus')) {
-            setSiteStatusTemplate();
-        } else {
+        //clean up resultant div
+        $('#status-cards').html("");
 
-            $.getJSON(uptimeRobotAPI, function (project) {
-                //process values for our needs
-                project.monitors.monitor[0].status = getStatusFromCode(project.monitors.monitor[0].status);
-                var uptime = project.monitors.monitor[0].customuptimeratio.split("-");
-                project.monitors.monitor[0].day = uptime[0];
-                project.monitors.monitor[0].month = uptime[1];
-                project.monitors.monitor[0].week = uptime[2];
+        for(i = 0; i < apiKeys.length; i++) {
 
-                var data = JSON.stringify(project.monitors.monitor[0]);
-                console.log(data);
-                sessionStorage.setItem('siteStatus', data);
-                setSiteStatusTemplate();
-            })
-           .fail(function( jqxhr, textStatus, error ) {
-                var err = textStatus + ", " + error;
-                console.log( "Request Failed: " + err );
-            });
-
-        };
+          if (sessionStorage.getItem(apiKeys[i])) {
+              setSiteStatusTemplate(i, apiKeys[i]);
+          } else {
+              getLiveData(i, apiKeys[i]);
+          };
+        }
     })();
+
+    function setSiteStatusTemplate(index, key) {
+        var projectData = JSON.parse(sessionStorage.getItem(key));
+        var result = template(projectData);
+        $('#status-cards').append(result);
+        console.log(result);
+        drawChart(index, projectData);
+    }
+
+    function getLiveData(index, key) {
+      var uptimeRobotAPI = 'http://api.uptimerobot.com/getMonitors?apiKey=' + key + '&responseTimes=1&responseTimesAverage=120&customUptimeRatio=1-7-30&format=json&noJsonCallback=1';
+
+      console.log(uptimeRobotAPI);
+
+      $.getJSON(uptimeRobotAPI, function (project) {
+            //process values for our needs
+            project.monitors.monitor[0].index = index;
+            console.log("index: " + index);
+            project.monitors.monitor[0].status = getStatusFromCode(project.monitors.monitor[0].status);
+            var uptime = project.monitors.monitor[0].customuptimeratio.split("-");
+            project.monitors.monitor[0].day = uptime[0];
+            project.monitors.monitor[0].month = uptime[1];
+            project.monitors.monitor[0].week = uptime[2];
+
+            var data = JSON.stringify(project.monitors.monitor[0]);
+            console.log(data);
+            sessionStorage.setItem(key, data);
+            setSiteStatusTemplate(index, key);
+        })
+       .fail(function( jqxhr, textStatus, error ) {
+            var err = textStatus + ", " + error;
+            console.log( "Request Failed: " + err );
+        });
+    }
 
     function getStatusFromCode(code) {
         if(code == 0) return "paused";
@@ -94,7 +120,7 @@ $(document).ready(function () {
         if(code == 9) return "down";
     }
 
-    function drawChart(projectData) {
+    function drawChart(index, projectData) {
         var lineChartData = {
           labels : [],
           datasets : [
@@ -119,7 +145,7 @@ $(document).ready(function () {
             lineChartData.datasets[0].data.unshift(responses[i].value);
         }
 
-        var ctx = document.getElementById("canvas").getContext("2d");
+        var ctx = document.getElementById("canvas" + index).getContext("2d");
         new Chart(ctx).Line(lineChartData, {
           responsive: true,
           tooltipTemplate: "<%= value %> milliseconds",
