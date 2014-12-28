@@ -14,6 +14,7 @@ $(document).ready(function () {
                 result = template(projectData);
             console.log(projectData);
             $('#status-cards').html(result);
+            drawChart(projectData);
         };
 
         if (sessionStorage.getItem('siteStatus')) {
@@ -41,6 +42,37 @@ $(document).ready(function () {
         if(code == 2) return "up";
         if(code == 8) return "seems down";
         if(code == 9) return "down";
+    }
+
+    function drawChart(projectData) {
+        var lineChartData = {
+          labels : [],
+          datasets : [
+            {
+              label: "My First dataset",
+              fillColor : "rgba(220,220,220,0.2)",
+              strokeColor : "rgba(220,220,220,1)",
+              pointColor : "rgba(220,220,220,1)",
+              pointStrokeColor : "#fff",
+              pointHighlightFill : "#fff",
+              pointHighlightStroke : "rgba(220,220,220,1)",
+              data : []
+            }
+          ]
+        }
+
+        var responses = projectData.responsetime;
+
+        for (i = 0; i < responses.length; i++) {
+            var date = new Date(responses[i].datetime);
+            lineChartData.labels.unshift(date.getHours() + ':' + date.getMinutes());
+            lineChartData.datasets[0].data.unshift(responses[i].value);
+        }
+
+        var ctx = document.getElementById("canvas").getContext("2d");
+        new Chart(ctx).Line(lineChartData, {
+          responsive: true
+        });
     }
 });
 

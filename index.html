@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 {% raw %}
 <div id="content">
 <div id="status-cards" class="cards">
@@ -12,6 +11,8 @@ layout: default
       </div>
       <div class="card-copy">
         <p>Status: {{ this.status }}</p>
+        <strong>Response Time</strong>
+        <canvas id="canvas" width="300" height="120"></canvas>
       </div>
       <div class="card-stats">
         <strong>Uptime</strong>
@@ -25,6 +26,7 @@ layout: default
   </script>
 </div>
 </div>
+
 {% endraw %}
 
 
