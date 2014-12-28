@@ -1,5 +1,5 @@
 # Site settings
-title: Your awesome title
+title: KunRuch Creations Status
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -16,7 +16,6 @@ markdown: kramdown
 # Set the Sass partials directory, as we're using @imports
 sass:
   sass_dir: _sass
-  style: :compressed
 
 # Exclude these files from production _site
 exclude:

@@ -9,5 +9,13 @@
         "bourbon/bourbon",
         "neat/neat",
         "base/base",
-        "layout"
+        "cards"
 ;
+
+.wrapper {
+     @include outer-container;
+}
+
+h1[id] {
+    margin-bottom: 0.5em;
+}
