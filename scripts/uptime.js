@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
     var apiKey = 'm776535140-532aa29ae18195b1e80bc99e'; //read only api key
-    sessionStorage.clear();
+    //sessionStorage.clear();
 
     //credit: http://creatiface.github.io/personal-portfolio/
     (function () {
-        var uptimeRobotAPI = 'http://api.uptimerobot.com/getMonitors?apiKey=' + apiKey + '&responseTimes=1&responseTimesAverage=120&customUptimeRatio=7&format=json&noJsonCallback=1';
+        var uptimeRobotAPI = 'http://api.uptimerobot.com/getMonitors?apiKey=' + apiKey + '&responseTimes=1&responseTimesAverage=120&customUptimeRatio=1-7-30&format=json&noJsonCallback=1';
          console.log(uptimeRobotAPI);
         function setSiteStatusTemplate() {
             var projectData = JSON.parse(sessionStorage.getItem('siteStatus')),
@@ -22,7 +22,13 @@ $(document).ready(function () {
         } else {
 
             $.getJSON(uptimeRobotAPI, function (project) {
+                //process values for our needs
                 project.monitors.monitor[0].status = getStatusFromCode(project.monitors.monitor[0].status);
+                var uptime = project.monitors.monitor[0].customuptimeratio.split("-");
+                project.monitors.monitor[0].day = uptime[0];
+                project.monitors.monitor[0].month = uptime[1];
+                project.monitors.monitor[0].week = uptime[2];
+
                 var data = JSON.stringify(project.monitors.monitor[0]);
                 console.log(data);
                 sessionStorage.setItem('siteStatus', data);
