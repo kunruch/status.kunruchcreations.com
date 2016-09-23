@@ -1,2 +1,47 @@
 @import "vars";
 @import "mmcss/src/mm";
+
+.entry-title {
+  margin-bottom: 0;
+}
+
+.entry-meta {
+  font-weight: normal;
+  margin-left:8px;
+}
+
+h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 90%;
+  letter-spacing: 1px;
+  margin:0 0 0.5em;
+}
+
+.up {
+  background-color:#9ccc65;
+}
+
+.down {
+  background-color: #e74c3c;
+}
+
+.thumbnail-rounded .icon {
+  width: 50%;
+  height: 50%;
+  margin-left: 25%;
+  margin-top: 25%;
+}
+
+.uptime {
+  padding: 1em 0;
+  font-size: 90%;
+  margin-top: 0.5em;
+  text-align: center;
+  color: $color-text-muted;
+
+  .text-large {
+    font-size: 180%;
+    color: $color-primary;
+  }
+}
