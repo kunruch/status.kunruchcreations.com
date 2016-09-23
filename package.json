@@ -1,0 +1,33 @@
+{
+  "name": "status.kunruchcreations.com",
+  "version": "0.2.3",
+  "description": "Displays monitoring information of all sites of KunRuch Creations via UptimeRobot",
+  "dependencies": {},
+  "devDependencies": {
+    "mmpilot": "^0.1.7",
+    "npm-run-all": "^3.1.0",
+    "shx": "^0.1.4"
+  },
+  "scripts": {
+    "dev-build": "mmpilot clean && mmpilot build -c _mmpilot.yml,_mmpilot-dev.yml",
+    "dev-watch": "mmpilot watch -c _mmpilot.yml,_mmpilot-dev.yml",
+    "clean": "mmpilot clean",
+    "build": "mmpilot build",
+    "serve": "mmpilot serve",
+    "dev": "npm-run-all dev-build --parallel dev-watch serve",
+    "deploy": "npm run clean && npm run build && mmpilot deploy"
+  },
+  "engines": {
+    "node": ">=4.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kunruch/status.kunruchcreations.com.git"
+  },
+  "author": "Kanishk Kunal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kunruch/status.kunruchcreations.com/issues"
+  },
+  "homepage": "https://status.kunruchcreations.com/"
+}

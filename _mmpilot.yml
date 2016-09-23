@@ -1,0 +1,10 @@
+## data for building project
+html:
+  src: "html"
+
+## additional data for site available as site.{key} in pug templates
+site:
+  url: "https://status.kunruchcreations.com/"
+  github: "https://github.com/kunruch/status.kunruchcreations.com"
+  twitter: "https://twitter.com/kunruch"
+  analytics: "UA-37350394-13"
