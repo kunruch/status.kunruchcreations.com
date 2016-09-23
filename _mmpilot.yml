@@ -1,7 +1,3 @@
-## data for building project
-html:
-  src: "html"
-
 ## additional data for site available as site.{key} in pug templates
 site:
   url: "https://status.kunruchcreations.com/"
