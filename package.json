@@ -2,7 +2,9 @@
   "name": "status.kunruchcreations.com",
   "version": "0.2.3",
   "description": "Displays monitoring information of all sites of KunRuch Creations via UptimeRobot",
-  "dependencies": {},
+  "dependencies": {
+    "mmcss": "^0.2.3"
+  },
   "devDependencies": {
     "mmpilot": "^0.1.7",
     "npm-run-all": "^3.1.0"
