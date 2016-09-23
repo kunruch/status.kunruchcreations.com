@@ -5,8 +5,7 @@
   "dependencies": {},
   "devDependencies": {
     "mmpilot": "^0.1.7",
-    "npm-run-all": "^3.1.0",
-    "shx": "^0.1.4"
+    "npm-run-all": "^3.1.0"
   },
   "scripts": {
     "dev-build": "mmpilot clean && mmpilot build -c _mmpilot.yml,_mmpilot-dev.yml",
