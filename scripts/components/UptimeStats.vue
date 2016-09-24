@@ -11,7 +11,8 @@
               span.entry-meta ({{ item.url }})
           div.text-muted
             span Status: {{ item.status }}
-      .uptime.highlight
+      bar-chart(v-bind:responseTimes="item.responsetime")
+      .uptime
         h3 Uptime
         .grid
           .one-third
@@ -23,8 +24,6 @@
           .one-third
             strong.text-large {{ item.month }}%
             div 30 days
-      h3.text-center Response Time Graph
-      bar-chart(v-bind:item="item")
 </template>
 
 
