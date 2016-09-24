@@ -4,8 +4,7 @@
   "description": "Displays monitoring information of all sites of KunRuch Creations via UptimeRobot",
   "dependencies": {
     "mmcss": "^0.2.3",
-    "vue": "^2.0.0-rc.1",
-    "vueify": "^9.2.4"
+    "vue": "^2.0.0-rc.1"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
@@ -14,17 +13,19 @@
     "babel-runtime": "^6.11.6",
     "cross-env": "^2.0.1",
     "mmpilot": "^0.2.1",
+    "node-sass": "^3.10.0",
     "npm-run-all": "^3.1.0",
-    "vueify": "^9.0.0"
+    "pug": "^0.1.0",
+    "vueify": "^9.2.4"
   },
   "scripts": {
-    "dev-build": "mmpilot clean && mmpilot build -c _mmpilot.yml,_mmpilot-dev.yml",
-    "dev-watch": "mmpilot watch -c _mmpilot.yml,_mmpilot-dev.yml",
     "clean": "mmpilot clean",
     "build": "cross-env NODE_ENV=production mmpilot build",
+    "dev-build": "mmpilot build -c _mmpilot.yml,_mmpilot-dev.yml",
+    "watch": "mmpilot watch -c _mmpilot.yml,_mmpilot-dev.yml",
     "serve": "mmpilot serve",
-    "dev": "npm-run-all dev-build --parallel dev-watch serve",
-    "deploy": "npm run clean && npm run build && mmpilot deploy"
+    "dev": "npm-run-all clean dev-build --parallel watch serve",
+    "deploy": "npm-run-all clean build deploy"
   },
   "browserify": {
     "transform": [
