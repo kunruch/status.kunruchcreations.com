@@ -39,7 +39,17 @@ export default {
                         beginAtZero:true
                     }
                 }]
-            }
+            },
+            tooltips: {
+              callbacks: {
+        				title: function() {
+        					return '';
+        				},
+        				label: function(tooltipItem) {
+        					return tooltipItem.yLabel + ' milliseconds';
+        				}
+        			}
+          }
         }
     });
   }
