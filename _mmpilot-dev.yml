@@ -1,6 +1,6 @@
 #Overrides when running on dev server
 minify: false
-log: info #change to debug when necessary
+log: debug #change to debug when necessary
 
 site:
   url: "http://localhost:3000/"

@@ -1,3 +1,7 @@
+scripts:
+  browserify:
+    entries: ["main.js"]
+
 ## additional data for site available as site.{key} in pug templates
 site:
   url: "https://status.kunruchcreations.com/"
