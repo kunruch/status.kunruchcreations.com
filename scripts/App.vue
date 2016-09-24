@@ -8,7 +8,7 @@
 
 <script>
 import Uptime from './components/Uptime.vue'
-import {apiKeys} from './apikeys.js'
+import {apiKeys, getStatusFromCode} from './uptimerobot.js'
 
 export default {
   components: {
@@ -32,6 +32,8 @@ export default {
           uptimeData.day = uptime[0];
           uptimeData.month = uptime[1];
           uptimeData.week = uptime[2];
+
+          uptimeData.status = getStatusFromCode(uptimeData.status).toUpperCase();
 
           this.uptimestats.push(uptimeData);
         }

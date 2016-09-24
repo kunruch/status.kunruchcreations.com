@@ -8,3 +8,11 @@ export var apiKeys = [
   'm776536132-50d52b19b64f30b4be0f8e35', //Monika's Site
   'm776536134-9a92f84ee596fd0993ae1f32', //Kanishk's Site
 ];
+
+export function getStatusFromCode(code) {
+    if(code == 0) return "paused";
+    if(code == 1) return "not available";
+    if(code == 2) return "up";
+    if(code == 8) return "seems down";
+    if(code == 9) return "down";
+}
