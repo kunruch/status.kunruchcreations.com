@@ -7,21 +7,21 @@
         .media-body
           h2.h3.entry-title
             a(href="https://kunruchcreations.com/" target="_blank")
-              | {{item.name}}
-              span.entry-meta (kunruchcreations.com)
+              | {{ item.friendlyname }}
+              span.entry-meta ({{ item.url }})
           div.text-muted
-            span Status: UP
+            span Status: {{ item.status }}
       .uptime.highlight
         h3 Uptime
         .grid
           .one-third
-            strong.text-large 100%
+            strong.text-large {{ item.day }}%
             div 24hr
           .one-third
-            strong.text-large 100%
+            strong.text-large {{ item.week }}%
             div week
           .one-third
-            strong.text-large 100%
+            strong.text-large {{ item.month }}%
             div 30 days
       h3.text-center Response Time Graph
 </template>
