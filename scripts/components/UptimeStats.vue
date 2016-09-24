@@ -24,13 +24,17 @@
             strong.text-large {{ item.month }}%
             div 30 days
       h3.text-center Response Time Graph
+      bar-chart(v-bind:item="item")
 </template>
 
 
 <script>
+import BarChart from './BarChart.vue'
+
 export default {
   name: 'Uptime',
-  props: ['item']
+  props: ['item'],
+  components: { BarChart }
 }
 </script>
 

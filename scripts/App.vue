@@ -1,18 +1,18 @@
 <template>
   <div class="container-readable">
     <div v-for="obj in uptimestats">
-        <uptime :item="obj"></post>
+        <uptime-stats :item="obj"></uptime-stats>
     </div>
   </div>
 </template>
 
 <script>
-import Uptime from './components/Uptime.vue'
+import UptimeStats from './components/UptimeStats.vue'
 import {apiKeys, getApiRequest, getStatusFromCode} from './uptimerobot.js'
 
 export default {
   components: {
-    Uptime
+    UptimeStats
   },
   data () {
     return {
@@ -47,8 +47,4 @@ export default {
 </script>
 
 <style lang="scss">
-  .title {
-    color: #222;
-    text-align: center;
-  }
 </style>
