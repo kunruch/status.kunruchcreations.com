@@ -35,8 +35,4 @@ export default {
 </script>
 
 <style lang="scss">
-  .title {
-    color: #222;
-    text-align: center;
-  }
 </style>

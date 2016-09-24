@@ -8,7 +8,7 @@
 
 <script>
 import Uptime from './components/Uptime.vue'
-import {apiKeys, getStatusFromCode} from './uptimerobot.js'
+import {apiKeys, getApiRequest, getStatusFromCode} from './uptimerobot.js'
 
 export default {
   components: {
@@ -21,7 +21,7 @@ export default {
   },
   created() {
     for (var index = 0; index < apiKeys.length; index++) {
-      var api_request = "https://api.uptimerobot.com/getMonitors?apiKey="+ apiKeys[index] +"&responseTimes=1&responseTimesAverage=120&customUptimeRatio=1-7-30&format=json&noJsonCallback=1";
+      var api_request = getApiRequest(apiKeys[index]);
       this.$http.get(api_request)
       .then(function(resp){
         if(resp.data.stat == "ok") {

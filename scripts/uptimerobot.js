@@ -9,6 +9,10 @@ export var apiKeys = [
   'm776536134-9a92f84ee596fd0993ae1f32', //Kanishk's Site
 ];
 
+export function getApiRequest(key) {
+  return 'https://api.uptimerobot.com/getMonitors?apiKey='+ key +'&responseTimes=1&responseTimesAverage=120&customUptimeRatio=1-7-30&format=json&noJsonCallback=1';
+}
+
 export function getStatusFromCode(code) {
     if(code == 0) return "paused";
     if(code == 1) return "not available";
