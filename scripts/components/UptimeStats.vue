@@ -36,6 +36,3 @@ export default {
   components: { BarChart }
 }
 </script>
-
-<style lang="scss">
-</style>

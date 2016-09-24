@@ -26,7 +26,7 @@ export default {
       .then(function(resp){
         if(resp.data.stat == "ok") {
           var uptimeData = resp.data.monitors.monitor[0];
-          console.log(JSON.stringify(uptimeData));
+          //console.log(JSON.stringify(uptimeData));
 
           var uptime = uptimeData.customuptimeratio.split("-");
           uptimeData.day = uptime[0];
@@ -45,6 +45,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-</style>
