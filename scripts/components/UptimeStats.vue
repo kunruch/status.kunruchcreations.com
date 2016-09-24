@@ -1,12 +1,14 @@
 <template lang="pug">
   div.container-readable
-    .status-item.section
+    .section
       .media.media-left
-        .thumbnail-small.thumbnail-rounded.up
-          | <svg class="icon icon-check"><use xlink:href="#icon-check"></use></svg>
+        .thumbnail-small.thumbnail-rounded.up(v-if="item.status == 'UP'")
+          | <svg class="icon icon-check" v-bind:class="item.status"><use xlink:href="#icon-check"></use></svg>
+        .thumbnail-small.thumbnail-rounded(v-else)
+          | <svg class="icon icon-close" v-bind:class="item.status"><use xlink:href="#icon-close"></use></svg>
         .media-body
           h2.h3.entry-title
-            a(href="https://kunruchcreations.com/" target="_blank")
+            a(v-bind:href="item.url" target="_blank")
               | {{ item.friendlyname }}
               span.entry-meta ({{ item.url }})
           div.text-muted

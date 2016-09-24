@@ -18,12 +18,12 @@ h3 {
   margin:0 0 0.5em;
 }
 
-.up {
-  background-color:#099;
+.thumbnail-small {
+  background-color: #e74c3c;
 }
 
-.down {
-  background-color: #e74c3c;
+.thumbnail-small.up {
+  background-color:#099;
 }
 
 .thumbnail-rounded .icon {
