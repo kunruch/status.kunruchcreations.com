@@ -1,25 +1,38 @@
 @import "vars";
 @import "mmcss/src/mm";
 
+.uptime-item-head {
+  margin-top: 4rem;
+
+  .media {
+    float: left;
+  }
+  button {
+    float: right;
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 2;
+    color: $color-text-muted;
+  }
+
+  &:after {
+    @extend .clearfix;
+  }
+}
+
 .entry-title {
+  margin-top: 0;
   margin-bottom: 3px;
 
   .entry-meta {
-    font-weight: normal;
+    font-weight: 300;
+    font-size: 14px;
     margin-left:8px;
   }
 }
 
 .entry-meta strong {
   font-weight: 500;
-}
-
-h3 {
-  font-weight: normal;
-  text-transform: uppercase;
-  font-size: 90%;
-  letter-spacing: 1px;
-  margin:0 0 0.5em;
 }
 
 .thumbnail-small {
@@ -49,8 +62,31 @@ h3 {
   text-align: center;
   color: $color-text-muted;
 
+  h3 {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 90%;
+    letter-spacing: 1px;
+    margin:0 0 0.5em;
+    line-height: 68px;
+  }
+
   .text-large {
     font-size: 180%;
     color: $color-primary;
   }
+}
+
+.slide-fade-enter-active, .slide-fade-leave-active {
+  transition: all .3s ease;
+}
+
+.slide-fade-enter {
+  transform: translateY(50%);
+  opacity: 0;
+}
+
+.slide-fade-leave-active {
+  transform: translateX(50%);
+  opacity: 0;
 }

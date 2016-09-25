@@ -1,6 +1,6 @@
 <template lang="pug">
   div.container-readable
-    .section
+    .uptime-item-head
       .media.media-left
         .thumbnail-small.thumbnail-rounded.up(v-if="item.status == 'UP'")
           | <svg class="icon icon-check" v-bind:class="item.status"><use xlink:href="#icon-check"></use></svg>
@@ -14,19 +14,24 @@
           div.entry-meta
             span Status: <strong>{{ item.status }}</strong>
             span Avg. Resoponse Time: <strong>{{ item. responseTimesAvg }}ms</strong>
-      bar-chart(v-bind:responseTimes="item.responsetime")
-      .uptime
-        h3 Uptime
-        .grid
-          .one-third
-            strong.text-large {{ item.day }}%
-            div 24hr
-          .one-third
-            strong.text-large {{ item.week }}%
-            div week
-          .one-third
-            strong.text-large {{ item.month }}%
-            div 30 days
+      button.button-ghost(v-on:click="show = !show") Details
+
+    transition(name="slide-fade")
+      .uptime-item-body(v-if="show")
+        bar-chart(v-bind:responseTimes="item.responsetime")
+        .uptime
+          .grid
+            .one-fourth
+              h3 Uptime
+            .one-fourth
+              strong.text-large {{ item.day }}%
+              div 24hr
+            .one-fourth
+              strong.text-large {{ item.week }}%
+              div week
+            .one-fourth
+              strong.text-large {{ item.month }}%
+              div 30 days
 </template>
 
 
@@ -36,6 +41,11 @@ import BarChart from './BarChart.vue'
 export default {
   name: 'Uptime',
   props: ['item'],
+  data(){
+    return {
+      show: false
+    }
+  },
   components: { BarChart }
 }
 </script>
