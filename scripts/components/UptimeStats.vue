@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.container-readable
+  div.container-readable(v-if="visible")
     .uptime-item-head
       .media.media-left
         .thumbnail-small.thumbnail-rounded.up(v-if="item.status == 'UP'")
@@ -14,10 +14,10 @@
           div.entry-meta
             span Status: <strong>{{ item.status }}</strong>
             span Avg. Resoponse Time: <strong>{{ item. responseTimesAvg }}ms</strong>
-      button.button-ghost(v-on:click="show = !show") {{ show ? "Hide" : "Details" }}
+      button.button-ghost(v-on:click="showDetails = !showDetails") {{ showDetails ? "Hide" : "Details" }}
 
     transition(name="slide-fade")
-      .uptime-item-body(v-if="show")
+      .uptime-item-body(v-if="showDetails")
         bar-chart(v-bind:responseTimes="item.responsetime")
         .uptime
           .grid
@@ -36,16 +36,52 @@
 
 
 <script>
+import {getApiRequest, getStatusFromCode} from './../uptimerobot.js'
 import BarChart from './BarChart.vue'
 
 export default {
   name: 'Uptime',
-  props: ['item'],
+  props: ['apikey'],
+  components: { BarChart },
+
   data(){
     return {
-      show: false
+      showDetails: false,
+      visible: false,
+      item: {
+        friendlyname: "Loading..",
+      }
     }
   },
-  components: { BarChart }
+
+  created() {
+    var api_request = getApiRequest(this.apikey);
+    this.$http.get(api_request)
+      .then(function(resp) {
+        if(resp.data.stat == "ok") {
+          this.item = resp.data.monitors.monitor[0];
+          //console.log(JSON.stringify(uptimeData));
+
+          var uptime = this.item.customuptimeratio.split("-");
+          this.item.day = uptime[0];
+          this.item.month = uptime[1];
+          this.item.week = uptime[2];
+
+          this.item.status = getStatusFromCode(this.item.status).toUpperCase();
+
+          var respTotal = 0;
+          for (var i = 0; i < this.item.responsetime.length; i++) {
+            respTotal = respTotal + parseInt(this.item.responsetime[i].value);
+          }
+          this.item.responseTimesAvg = (respTotal / this.item.responsetime.length).toFixed(2);
+
+          this.visible = true;
+        }
+        else {
+          console.log("Failed for " + api_request);
+        }
+      });
+
+  }
 }
 </script>
