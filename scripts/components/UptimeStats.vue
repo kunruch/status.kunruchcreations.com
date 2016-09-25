@@ -14,7 +14,7 @@
           div.entry-meta
             span Status: <strong>{{ item.status }}</strong>
             span Avg. Resoponse Time: <strong>{{ item. responseTimesAvg }}ms</strong>
-      button.button-ghost(v-on:click="show = !show") Details
+      button.button-ghost(v-on:click="show = !show") {{ show ? "Hide" : "Details" }}
 
     transition(name="slide-fade")
       .uptime-item-body(v-if="show")
