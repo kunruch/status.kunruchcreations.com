@@ -11,8 +11,9 @@
             a(v-bind:href="item.url" target="_blank")
               | {{ item.friendlyname }}
               span.entry-meta ({{ item.url }})
-          div.text-muted
-            span Status: {{ item.status }}
+          div.entry-meta
+            span Status: <strong>{{ item.status }}</strong>
+            span Avg. Resoponse Time: <strong>{{ item. responseTimesAvg }}ms</strong>
       bar-chart(v-bind:responseTimes="item.responsetime")
       .uptime
         h3 Uptime

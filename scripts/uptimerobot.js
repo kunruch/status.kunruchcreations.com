@@ -10,7 +10,7 @@ export var apiKeys = [
 ];
 
 export function getApiRequest(key) {
-  return 'https://api.uptimerobot.com/getMonitors?apiKey='+ key +'&responseTimes=1&responseTimesAverage=120&customUptimeRatio=1-7-30&format=json&noJsonCallback=1';
+  return 'https://api.uptimerobot.com/getMonitors?apiKey='+ key +'&responseTimes=1&responseTimesAverage=60&customUptimeRatio=1-7-30&format=json&noJsonCallback=1';
 }
 
 export function getStatusFromCode(code) {

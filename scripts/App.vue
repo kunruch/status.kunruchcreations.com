@@ -35,6 +35,12 @@ export default {
 
           uptimeData.status = getStatusFromCode(uptimeData.status).toUpperCase();
 
+          var respTotal = 0;
+          for (var i = 0; i < uptimeData.responsetime.length; i++) {
+            respTotal = respTotal + parseInt(uptimeData.responsetime[i].value);
+          }
+          uptimeData.responseTimesAvg = (respTotal / uptimeData.responsetime.length).toFixed(2);
+
           this.uptimestats.push(uptimeData);
         }
         else {

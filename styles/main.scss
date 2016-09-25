@@ -2,12 +2,16 @@
 @import "mmcss/src/mm";
 
 .entry-title {
-  margin-bottom: 0;
+  margin-bottom: 3px;
+
+  .entry-meta {
+    font-weight: normal;
+    margin-left:8px;
+  }
 }
 
-.entry-meta {
-  font-weight: normal;
-  margin-left:8px;
+.entry-meta strong {
+  font-weight: 500;
 }
 
 h3 {
@@ -20,6 +24,7 @@ h3 {
 
 .thumbnail-small {
   background-color: #e74c3c;
+  margin-top: 3px;
 }
 
 .thumbnail-small.up {
@@ -34,7 +39,7 @@ h3 {
 }
 
 .bar-chart {
-  margin-top: 1em;
+  margin-top: 1.5em;
 }
 
 .uptime {
