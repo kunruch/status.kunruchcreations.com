@@ -4,7 +4,7 @@
   "description": "Displays monitoring information of all sites of KunRuch Creations via UptimeRobot",
   "dependencies": {
     "chart.js": "^2.3.0",
-    "mmcss": "^0.2.3",
+    "mmcss": "^0.2.4",
     "vue": "^2.0.0-rc.1",
     "vue-resource": "^1.0.3"
   },
