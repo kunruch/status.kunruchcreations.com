@@ -28,7 +28,7 @@
     "watch": "mmpilot watch -c _mmpilot.yml,_mmpilot-dev.yml",
     "serve": "mmpilot serve",
     "dev": "npm-run-all clean dev-build --parallel watch serve",
-    "deploy": "npm-run-all clean build deploy"
+    "deploy": "npm-run-all clean build && mmpilot deploy"
   },
   "browserify": {
     "transform": [
