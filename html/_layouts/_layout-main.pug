@@ -16,17 +16,18 @@ html(lang='en-US')
     style
       include ./../_includes/_icons.css
     block styles
-    link(rel='icon', href=site.url + 'img/favicon-32x32.png', sizes='32x32')
-    link(rel='icon', href=site.url + 'img/favicon-192x192.png', sizes='192x192')
-    link(rel='apple-touch-icon-precomposed', href=site.url + 'img/favicon-180x180.png')
-    meta(name='msapplication-TileImage', content=site.url + 'img/favicon-270x270.png')
+    link(rel='icon', href=site.url + 'img/kunruch-logo-32x32.png', sizes='32x32')
+    link(rel='icon', href=site.url + 'img/kunruch-logo-192x192.png', sizes='192x192')
+    link(rel='apple-touch-icon-precomposed', href=site.url + 'img/kunruch-logo-180x180.png')
+    meta(name='msapplication-TileImage', content=site.url + 'img/kunruch-logo-270x270.png')
   body#top
     include ./../_includes/_icons.svg
     header.header
         .container
             .header-left
               a(href='https://kunruchcreations.com/').site-branding
-                img(src="/img/kunruch.png")
+                div(style="width:36px;height:36px;margin:8px 8px 8px 0;float:left")
+                  include ./../_includes/_kunruch.svg
                 h1.title KunRuch Creations
             div.text-large.hidden-mobile Status
             div.header-right.hidden-mobile
