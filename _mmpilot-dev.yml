@@ -1,7 +1,0 @@
-#Overrides when running on dev server
-minify: false
-log: debug #change to debug when necessary
-
-site:
-  url: "http://localhost:3000/"
-  analytics: "" #don't count hits from localhost in analytics
