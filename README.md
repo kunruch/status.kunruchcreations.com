@@ -2,7 +2,10 @@
 
 # [KunRuch Status](https://status.kunruchcreations.com/)
 
-Displays monitoring information of all sites of KunRuch Creations via UptimeRobot.
+Displays monitoring information of all sites of KunRuch Creations via UptimeRobot. 
+
+Current version is built with vue.js.  
+If you are interested in earlier version which was built with jQuery and handlbars then kindly see [v1.0](https://github.com/kunruch/status.kunruchcreations.com/tree/v1.0)
 
 ## Credits
 
