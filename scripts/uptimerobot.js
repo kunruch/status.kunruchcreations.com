@@ -3,6 +3,7 @@ export var apiKeys = [
   'm776535140-532aa29ae18195b1e80bc99e', //KunRuch Creations
   'm776535138-ba6e3462f4b14be50319c129', //KunRuch Games
   'm776535123-2492b15387efb6d456dec9bd', //Super Dev Resources
+  'm778218270-e1cbb98a7b2a62563039feb2', //SDR News
   'm777322185-43bfe0da4ddb26accc9751b4', //GraphicFlip
   'm777322182-0a125bd5409be964c28190f8', //TemplateFlip
   'm778193559-047fa15c71070d0404765d6a', //MMCSS
