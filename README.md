@@ -4,9 +4,13 @@
 
 Displays monitoring information of all sites of KunRuch Creations via UptimeRobot.
 
+<p align="center">
 <a href="https://status.kunruchcreations.com/">
-<img src="https://status.kunruchcreations.com/img/featured.png" style="margin:0 auto;box-shadow: 0px 6px 25px 0px rgba(85,85,85,0.3);"></img>
+<img src="https://status.kunruchcreations.com/img/featured.png"></img>
+<br>
+View Site
 </a>
+</p>
 
 Current version is built with vue.js.  
 If you are interested in earlier version which was built with jQuery and handlbars then kindly see [v1.0](https://github.com/kunruch/status.kunruchcreations.com/tree/v1.0)
