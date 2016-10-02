@@ -6,7 +6,7 @@ Displays monitoring information of all sites of KunRuch Creations via UptimeRobo
 
 <p align="center">
 <a href="https://status.kunruchcreations.com/">
-<img src="https://status.kunruchcreations.com/img/featured.png"></img>
+<img src="https://status.kunruchcreations.com/img/featured.png" width="750px"></img>
 <br>
 View Site
 </a>
