@@ -1,6 +1,6 @@
 <template lang="pug">
-  div.container-readable(v-if="visible")
-    .uptime-item-head
+  div
+    .uptime-item-head(v-if="visible")
       .media.media-left
         .thumbnail-small.thumbnail-rounded.up(v-if="item.status == 'UP'")
           | <svg class="icon icon-check" v-bind:class="item.status"><use xlink:href="#icon-check"></use></svg>
@@ -38,6 +38,7 @@
 <script>
 import {getApiRequest, getStatusFromCode} from './../uptimerobot.js'
 import BarChart from './BarChart.vue'
+import bus from './../bus.js'
 
 export default {
   name: 'Uptime',
@@ -76,6 +77,7 @@ export default {
           this.item.responseTimesAvg = (respTotal / this.item.responsetime.length).toFixed(2);
 
           this.visible = true;
+          bus.emit('loaded');
         }
         else {
           console.log("Failed for " + api_request);

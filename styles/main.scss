@@ -1,6 +1,10 @@
 @import "vars";
 @import "mmcss/src/mm";
 
+.main {
+  min-height: 600px;
+}
+
 .uptime-item-head {
   margin-top: 4rem;
 
