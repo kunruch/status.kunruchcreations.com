@@ -18,10 +18,6 @@
     line-height: 2;
     color: $color-text-muted;
   }
-
-  &:after {
-    @extend .clearfix;
-  }
 }
 
 .entry-title {

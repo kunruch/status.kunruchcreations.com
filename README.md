@@ -2,7 +2,7 @@
 
 # [KunRuch Status](https://status.kunruchcreations.com/)
 
-Displays monitoring information of all sites of KunRuch Creations via UptimeRobot.
+Displays monitoring information of all sites of [KunRuch Creations](https://kunruchcreations.com/) via UptimeRobot.
 
 <p align="center">
 <a href="https://status.kunruchcreations.com/">

@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    .uptime-item-head(v-if="visible")
+    .uptime-item-head.clearfix(v-if="visible")
       .media.media-left
         .thumbnail-small.thumbnail-rounded.up(v-if="item.status == 'UP'")
           | <svg class="icon icon-check" v-bind:class="item.status"><use xlink:href="#icon-check"></use></svg>

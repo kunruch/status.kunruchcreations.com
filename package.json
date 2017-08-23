@@ -3,23 +3,23 @@
   "version": "0.2.3",
   "description": "Displays monitoring information of all sites of KunRuch Creations via UptimeRobot",
   "dependencies": {
-    "chart.js": "^2.3.0",
-    "mmcss": "^0.2.4",
-    "vue": "^2.0.1",
-    "vue-resource": "^1.0.3"
+    "chart.js": "^2.6.0",
+    "mmcss": "^0.3.3",
+    "vue": "^2.4.2",
+    "vue-resource": "^1.3.4"
   },
   "devDependencies": {
-    "babel-core": "^6.17.0",
-    "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-es2015": "^6.16.0",
-    "babel-runtime": "^6.11.6",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-runtime": "^6.26.0",
     "babelify": "^7.3.0",
-    "mmpilot": "^0.3.1",
-    "node-sass": "^3.10.1",
-    "npm-run-all": "^3.1.0",
-    "pug": "^2.0.0-beta6",
-    "uglifyify": "^3.0.3",
-    "vueify": "^9.2.4"
+    "mmpilot": "^0.6.3",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "pug": "^2.0.0-rc.3",
+    "uglifyify": "^4.0.3",
+    "vueify": "^9.4.1"
   },
   "scripts": {
     "clean": "mmpilot clean",

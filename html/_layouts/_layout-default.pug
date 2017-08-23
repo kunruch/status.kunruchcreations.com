@@ -5,9 +5,9 @@ html(lang='en-US')
     meta(charset='UTF-8')
     meta(http-equiv='x-ua-compatible', content='ie=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    title #{title}
-    meta(name='description', content=description)
-    meta(property='og:title', content=title)
+    title #{page.title}
+    meta(name='description', content=page.description)
+    meta(property='og:title', content=page.title)
     meta(property='og:type', content='website')
     meta(property='og:url', content=page.url)
     meta(property='og:image', content=site.url + 'img/featured.png')
@@ -38,7 +38,7 @@ html(lang='en-US')
                | <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
                span Twitter
 
-    block content
+    div!=page.content
     footer.footer
       .container-content.section-large.text-center
         p Built with <a href="https://mmpilot.kunruchcreations.com/" target="_blank">mmpilot</a> by <a href="http://kunruchcreations.com/">KunRuch Creations</a>.
@@ -46,4 +46,5 @@ html(lang='en-US')
         a(href="https://uptimerobot.com/", target="_blank")
           img(src="/img/uptime-robot.png")
   block scripts
+  script(src='/scripts/main.js')
   include ./../_includes/_analytics.pug
