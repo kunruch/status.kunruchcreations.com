@@ -6,6 +6,7 @@ export var apiKeys = [
   'm778218270-e1cbb98a7b2a62563039feb2', //SDR News
   'm777322185-43bfe0da4ddb26accc9751b4', //GraphicFlip
   'm777322182-0a125bd5409be964c28190f8', //TemplateFlip
+  'm779335443-7fbdb491bfdbe56967052078', //85apps
   'm778193559-047fa15c71070d0404765d6a', //MMCSS
   'm778193560-302971c3b621436fcdc52390', //MMPilot
   'm778193562-ce4cb3dd51f689e0252e2d82', //MM Notes
