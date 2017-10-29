@@ -7,9 +7,8 @@ export var apiKeys = [
   'm777322185-43bfe0da4ddb26accc9751b4', //GraphicFlip
   'm779488541-4743295754bb5c6590f56954', //GraphicFlip News
   'm777322182-0a125bd5409be964c28190f8', //TemplateFlip
-  'm779335443-7fbdb491bfdbe56967052078', //85apps,
+  'm779575271-9d34206ba4bf081fce1f5c61', //Tech Buzz Online
   'm779488534-9a1588a6c23e5464dced922f', //MM Themes
-  'm779488539-70c95fd2a12b7589611e1ff4', //WhatVersion.info
   'm778193559-047fa15c71070d0404765d6a', //MMCSS
   'm778193560-302971c3b621436fcdc52390', //MMPilot
   'm776536132-50d52b19b64f30b4be0f8e35', //Monika's Site
