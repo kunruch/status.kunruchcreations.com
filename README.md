@@ -18,11 +18,11 @@ If you are interested in earlier version which was built with jQuery and handlba
 ## Checks uptime status for following sites:
 
  - [KunRuch Creations](https://kunruchcreations.com)
- - [Super Dev Resources(https://superdevresources.com)]
- - [TemplateFlip(https://templateflip.com)]
- - [Tech Buzz Online(https://www.techbuzzonline.com/)]
- - [Monika Ratan(http://monikaratan.in)]
- - [Kanishk Kunal(http://kanishkkunal.in)]
+ - [Super Dev Resources](https://superdevresources.com)
+ - [TemplateFlip](https://templateflip.com)
+ - [Tech Buzz Online](https://www.techbuzzonline.com/)
+ - [Monika Ratan](http://monikaratan.in)
+ - [Kanishk Kunal](http://kanishkkunal.in)
  
  Other sites may have been deprecated or merged.
 
