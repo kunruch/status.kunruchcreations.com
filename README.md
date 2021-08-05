@@ -1,8 +1,6 @@
 This code is no longer being used and the new status page is provided for free by Uptime Robot on [KunRuch Status](https://status.kunruchcreations.com/)
 
 
-[![Build Status](https://travis-ci.org/kunruch/status.kunruchcreations.com.svg?branch=master)](https://travis-ci.org/kunruch/status.kunruchcreations.com)
-
 # [KunRuch Status](https://status.kunruchcreations.com/)
 
 Displays monitoring information of all sites of [KunRuch Creations](https://kunruchcreations.com/) via UptimeRobot.
