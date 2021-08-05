@@ -8,9 +8,6 @@ Displays monitoring information of all sites of [KunRuch Creations](https://kunr
 <p align="center">
 <a href="https://status.kunruchcreations.com/">
 <img src="https://raw.githubusercontent.com/kunruch/status.kunruchcreations.com/master/assets/img/featured.png" width="750px"></img>
-<br>
-View Site
-</a>
 </p>
 
 Current version is built with vue.js.  
